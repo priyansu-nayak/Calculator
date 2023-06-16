@@ -1,0 +1,95 @@
+/* download Gotham rounded 
+
+min-height
+linear-gradient
+
+
+
+
+
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: Gotham Rounded, sans-serif;
+  font-weight: normal;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+
+  background: linear-gradient(
+    to right,
+    hsl(200, 100%, 50%),
+    hsl(145, 100%, 50%)
+  );
+}
+
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  /* says it's gon' fill 100% of visible screen */
+  /* align-items: center; */
+
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid white;
+  outline: none;
+  /* browsers just put outline by default */
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.calculator-grid > button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1/-1;
+  background-color: rgba(0, 0, 0, 0.75);
+  
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+
+  padding: 10px;
+  word-wrap: break-word;
+  /* The CSS property word-wrap: break-word; is used to
+   force long words or strings of characters to break 
+   and wrap onto the next line within their container. 
+   This property is particularly useful when dealing with 
+   long URLs or strings that would otherwise overflow 
+   the container. */
+
+    word-break:break-all;
+    /*  By applying word-break: break-all;, long words 
+    will be broken at any character, including within the 
+    characters themselves, if necessary to fit within the
+     container width. */
+}
+
+.output .previous-operand{
+    color:rgba(255, 255, 255, 0.75);
+    font-size:1.5rem;
+
+}
+
+.output .current-operand{
+    color:white;
+    font-size:2.5rem;
+}
